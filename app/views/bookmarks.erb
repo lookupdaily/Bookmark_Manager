@@ -1,2 +1,5 @@
 <p>Your bookmarks</p>
-<p><%= @bookmarks.to_s %>
+
+<% @bookmarks.each do |bookmark| %>
+<p><%= bookmark %></p>
+<% end %>

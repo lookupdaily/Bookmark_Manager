@@ -7,3 +7,4 @@ feature 'adding bookmarks' do
     expect(page).to have_content 'http:www.wikipedia.com'
   end 
 end 
+

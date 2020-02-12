@@ -1,11 +1,7 @@
 require 'bookmark'
 
 describe Bookmark do
-  # let(:bookmark) { Bookmark.new("link") }
 
-  # it 'should show a list of bookmarks' do
-  #   expect(Bookmark.all).to include bookmark
-  # end
   before do
     connection = PG.connect(dbname: 'bookmark_manager_test')
     

@@ -3,3 +3,10 @@
 <% @bookmarks.each do |bookmark| %>
 <p><%= bookmark %></p>
 <% end %>
+
+<p><%= @url %></p>
+
+<form action="/add">
+  <input type="submit" value="Add">
+</form>
+

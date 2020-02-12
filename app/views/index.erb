@@ -1,2 +1,5 @@
 <p>Bookmark Manager</p>
-<p><a href="/bookmarks">My Bookmarks</a></p>
+
+<% @bookmarks.each do |bookmark| %>
+<p><%= bookmark %></p>
+<% end %>

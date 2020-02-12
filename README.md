@@ -16,7 +16,13 @@ A web app which allows a user to bookmark their favourite sites.
 As a user
 So that I can revisit sites I like
 I would like to see a list of bookmarks
+
+As a user 
+So that I save my bookmarks
+I would like to be able to add new bookmarks to the database
 ```
+
+
 
 ## Domain Model Diagram ##
 ![user_story_1](./user_story_1_720.jpeg)

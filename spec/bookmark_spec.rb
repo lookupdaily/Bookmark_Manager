@@ -17,10 +17,9 @@ describe Bookmark do
 
   describe '#create' do 
 
-    it 'should added url to database' do 
+    it 'should added url and title to database' do 
       Bookmark.create(url: 'http://www.google.com', title: 'Google')
-      expect(Bookmark.all).to include("http://www.google.com")
-      expect(Bookmark.all).to include("Google")
+      expect(Bookmark.all).to include(["http://www.google.com", "Google"])
     end
   end 
 end

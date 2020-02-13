@@ -9,7 +9,7 @@ feature 'Viewing bookmarks' do
     visit '/'
 
     expect(page).to have_link("Makers", href: 'http://www.makersacademy.com')
-    expect(page).to have_link("Destory All Software", href: 'http://www.destroyallsoftware.com')
+    expect(page).to have_link("Destroy All Software", href: 'http://www.destroyallsoftware.com')
     expect(page).to have_link("Google", href: 'http://www.google.com')
   end
 

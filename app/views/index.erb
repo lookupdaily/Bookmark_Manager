@@ -1,12 +1,12 @@
 <p>Bookmark Manager</p>
 
+<ul>
 <% @bookmarks.each do |bookmark| %>
-<p><%= bookmark %></p>
+<li><a href=<%= bookmark[:url] %>> <%= bookmark[:title] %> </a></li>
 <% end %>
-
+</ul>
 
 
 <form action="/add">
   <input type="submit" value="Add">
 </form>
-

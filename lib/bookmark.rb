@@ -10,7 +10,6 @@ class Bookmark
     end
 
     result = connection.exec("SELECT * FROM bookmarks")
-    p result
     result.map { |bookmark| [bookmark['url'],bookmark['title']] }
   end
 

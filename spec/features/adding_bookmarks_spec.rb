@@ -7,5 +7,5 @@ feature 'adding bookmarks' do
     click_button 'Submit'
     expect(page).to have_link('Wikipedia', href: 'http://www.wikipedia.com')
   end 
-end 
+end
 

@@ -28,5 +28,14 @@ describe Bookmark do
       expect(bookmarks.first.url).to eq 'http://www.makersacademy.com'
      end
    end
+
+   describe '.delete' do
+    it 'removes link from database' do
+      bookmark = Bookmark.create(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
+      bookmark.delete
+      expect(bookmarks.all).not_to include bookmark
+    end
+   end
+
 end
 

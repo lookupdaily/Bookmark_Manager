@@ -4,7 +4,7 @@ feature 'Deleting bookmarks' do
       Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers')
 
       visit '/'
-      click_on 'delete_Makers'
+      first('.bookmark').click_button 'Delete'
       expect(current_path).to eq '/'
       expect(page).not_to have_link("Makers", href: 'http://www.makersacademy.com')
     end

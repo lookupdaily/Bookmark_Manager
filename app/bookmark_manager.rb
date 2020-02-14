@@ -3,12 +3,10 @@ require_relative '../lib/bookmark'
 
 class BookmarkManager < Sinatra::Base
 
-
+  enable :sessions, :method_override
 
   get '/' do
     @bookmarks = Bookmark.all
-    p "reading urls:"
-    
     erb :index
   end
 
@@ -18,18 +16,12 @@ class BookmarkManager < Sinatra::Base
 
   post '/add' do
     Bookmark.create(url: params[:url], title: params[:title])
-    p "Adding new url:" 
-    p ObjectSpace.each_object(Bookmark).count
     redirect '/'
   end
 
-  get '/test' do
-    p ObjectSpace.each_object(Bookmark).count
-    "hello"
-  end
-
-  post '/delete' do
-    'delete'
+  delete '/:id' do
+    Bookmark.delete(id: params[:id])
     redirect '/'
   end
+
 end

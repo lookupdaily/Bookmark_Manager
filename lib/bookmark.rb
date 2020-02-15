@@ -18,7 +18,8 @@ class Bookmark
   end
 
   def self.create(url:, title:)
-    result = DatabaseConnection.query("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}')RETURNING id, url, title")
+    query = "INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}')RETURNING id, url, title"
+    result = DatabaseConnection.query(query)
     Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url']) 
   end 
 
@@ -32,7 +33,8 @@ class Bookmark
   end
 
   def self.update(id:, url:, title:)
-    result = DatabaseConnection.query("UPDATE bookmarks SET url = '#{url}', title = '#{title}'  WHERE id = #{id} RETURNING id, url, title")
+    query = "UPDATE bookmarks SET url = '#{url}', title = '#{title}'  WHERE id = #{id} RETURNING id, url, title"
+    result = DatabaseConnection.query(query)
     Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
   end
 

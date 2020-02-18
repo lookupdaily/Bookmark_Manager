@@ -1,4 +1,8 @@
 <p>Bookmark Manager</p>
+<form action="/add">
+  <input type="submit" value="Add">
+</form>
+<aside><%= flash[:notice] %></aside>
 
 <ul>
 <% @bookmarks.each do |bookmark| %>
@@ -16,6 +20,4 @@
 </ul>
 
 
-<form action="/add">
-  <input type="submit" value="Add">
-</form>
+

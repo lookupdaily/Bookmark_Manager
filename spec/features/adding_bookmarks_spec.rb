@@ -7,5 +7,13 @@ feature 'adding bookmarks' do
     click_button 'Submit'
     expect(page).to have_link('Wikipedia', href: 'http://www.wikipedia.com')
   end 
-end
 
+  scenario 'The bookmark must be a valid url' do
+    visit '/add'
+    fill_in 'url', with: 'not a real bookmark'
+    click_button 'Submit'
+
+    expect(page).not_to have_content "not a real bookmark"
+    expect(page).to have_content "You must submit a valid URL."
+  end
+end
